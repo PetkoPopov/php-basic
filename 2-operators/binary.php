@@ -62,7 +62,8 @@ var_dump(
  );
 
 $mod=5%3;//dawa 2 ostatayk ot delene 
-
+// проверка за четност 
+//$numm%2==0
 
 
 
