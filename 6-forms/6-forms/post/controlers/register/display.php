@@ -1,7 +1,16 @@
 <?php
-//controle/register/display.php
-$viewFile=VIEWS_DIR.'/register.php';
-
+//controlers/register/display.php
+// 
+//ако сесийанта променлива съществува и не е празна 
+//пренасочваме потребителя към ИНДЕКСА
+//
+if(!empty($_SESSION['logged'])){
+    
+   // header('Location: index.php');
+    //exit();
+    redirect();
+}
+$viewFile=VIEWS_DIR.'/register.php';//показва  формата за регистрация 
 if(!empty($_GET['error']))
 {
     
@@ -13,9 +22,9 @@ if(!empty($_GET['error']))
         break;
     case 2:
         $errorMessage='first name required ';
-break;        
+        break;        
     case 3:
-        $errorMessage='last name reùired';
+        $errorMessage='last name required';
         break;
     case 4:
         $errorMessage='password required';

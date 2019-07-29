@@ -1,5 +1,6 @@
 <?php
-
+session_start();
+include_once'function.php';
 
 
 
@@ -41,21 +42,25 @@
 // 
 // 
 //
-session_start();
+
+//дефинираме пътища до съответните папки-директории 
 define('VIEWS_DIR',__DIR__.'/views');
 define('CONTROLERS_DIR',__DIR__.'/controlers');
 define('DATA_DIR',__DIR__.'/data');
-define('DISPLAY_FILE','/display.php');
+// до съответните файлове 
+ define('DISPLAY_FILE','/display.php');
 define('PROCESS_FILE','/process.php');
 define('URL_PARAM','page');//url 
-define('DEFAULT_PAGE','profile');
+define('HOME_PAGE','home');
 //използваме урл_парам защото паже-то може да го сменим след време 
-if(!empty($_GET[URL_PARAM])){
+if(!empty($_GET[URL_PARAM])){//тук започва кода ако има заявка тръгва 
     $page=$_GET[URL_PARAM];
-}else{
-    $page=DEFAULT_PAGE;
+}else
+{
+    $page=HOME_PAGE;
 }
-$dir=CONTROLERS_DIR.'/'.$page;
+  
+$dir=CONTROLERS_DIR.'/'.$page;//води ни в контролерс папки с логика
 if($_SERVER['REQUEST_METHOD']=='GET'){
     //ako е гет взема файла и показва съдържание
     $file=DISPLAY_FILE;

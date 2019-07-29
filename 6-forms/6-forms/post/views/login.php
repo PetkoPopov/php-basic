@@ -1,4 +1,6 @@
+<!--идваме тук изпратени от дисплей.пхп или процес.пхп-->
 <div class="starter-template">
+   <!-- <h1><?php// echo $_SESSION['count'];?></h1>редът е за изтриване-->
     <h1>Login</h1>
 </div>
 <div class="row">
