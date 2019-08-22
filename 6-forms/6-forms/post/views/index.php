@@ -4,6 +4,9 @@
 <div class="row">
     <div class="col-4 offset-md-4">
         <div>
+            <?php if(!empty($user['avatar'])):?>
+            <img src="<?=$_SESSION['user']['avatar'];?>" style="max-width:300px"/>
+            <?php endif;?>
             <dl>
                 <dt>names</dt>
                 <dd><?= $user['first_name'].' '.$user['last_name'];?></dd>
@@ -21,7 +24,7 @@
         </div>
         <hr />
         <div>
-            <a href="views/profile.php" class="btn btn-primary">Edit profile</a>
+            <a href="index.php?page=profile" class="btn btn-primary">Edit profile</a>
         </div>
     </div>
 </div>

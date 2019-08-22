@@ -3,18 +3,24 @@
 </div>
 <div class="row">
     <div class="col-4 offset-md-4">
-        <form method="post" action="../index.php?page=profile">
+        <form method="post" action="index.php?page=profile" enctype="multipart/form-data">
             <div class="form-group">
-                <p><?php echo $user['email'];  //името на потребителя ?></p>
+                <p><?php echo $_SESSION['user']['email'] ?></p>
             </div>
             <div class="form-group">
                 <label class="control-label" for="firstName">First name</label>
-                <input type="text" class="form-control" id="firstName" name="first_name" placeholder="John" />
+                <input type="text" class="form-control" id="firstName" name="first_name" placeholder="<?php echo$user['first_name'];?>" />
             </div>
             <div class="form-group">
                 <label class="control-label" for="lastName">Last name</label>
-                <input type="text" class="form-control" id="lastName" name="last_name" placeholder="Doe" />
+                <input type="text" class="form-control" id="lastName" name="last_name" placeholder="<?=$_SESSION['user']['last_name']?>" />
             </div>
+            
+             <div class="form-group">
+                <label class="control-label" for="avatar">AVATAR</label>
+                <input type="file" class="form-control" id="avatar" name="avatar"/>
+            </div>
+
             <div class="form-group">
                 <label class="control-label" for="language">Language</label>
                 <select class="form-control" name="language" id="language">
@@ -47,7 +53,7 @@
 <hr />
 <div class="row">
     <div class="col-4 offset-md-4">
-        <a href="login.html">Login</a> | <a href="forgotten-password.html">Forgotten password</a>
+        <a href="index.php?page=login">Login</a> | <a href="forgotten-password.html">Forgotten password</a>
     </div>
 </div>
 

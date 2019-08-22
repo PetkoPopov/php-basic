@@ -19,7 +19,8 @@ $sortingCallback=function($a,$b){
    // space-ship operator дава -1 ако ляво е по голямо 
     // нула ако са равни 
     // и +1 ако б е по голямо 
-    return $a['first_name']<=>$b['first_name'] ;
+    return $a['first_name']<=> $b['first_name'] ;
+    
 };
 
 usort($users,$sortingCallback);

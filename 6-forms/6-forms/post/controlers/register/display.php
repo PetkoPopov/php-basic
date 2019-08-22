@@ -4,6 +4,8 @@
 //ако сесийанта променлива съществува и не е празна 
 //пренасочваме потребителя към ИНДЕКСА
 //
+echo 'Controlers/register/dipslay.php'; 
+
 if(!empty($_SESSION['logged'])){
     
    // header('Location: index.php');
@@ -11,6 +13,8 @@ if(!empty($_SESSION['logged'])){
     redirect();
 }
 $viewFile=VIEWS_DIR.'/register.php';//показва  формата за регистрация 
+//$viewFile;die;//създава път до папка вю и файла РЕГИСТЕР.пхп
+//
 if(!empty($_GET['error']))
 {
     
@@ -45,4 +49,5 @@ if(!empty($_GET['error']))
         $errorMessage='error ocurred';
 }
 }
-require_once VIEWS_DIR.'/template.php';
+require_once VIEWS_DIR.'/template.php';//викаме темплейта тук в него е добавен
+//$viewFile който пък е пътя до формата 

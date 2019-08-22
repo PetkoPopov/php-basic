@@ -11,7 +11,7 @@
 
 <div class="row">
     <div class="col-4 offset-md-4">
-        <form method='POST' action='index.php?page=register'>
+        <form method="post"action='index.php?page=register'>
         <div class="form-group">
             <label class="control-label" for="email">Email</label>
             <input type="email" class="form-control" id="email" name="email" placeholder="j.doe@example.com" />

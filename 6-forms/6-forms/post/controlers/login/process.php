@@ -11,7 +11,7 @@
 //
 
 //1.
-// controlers/login/procces.php
+echo'controlers/login/procces.php';
 //
 //
 if(!empty($_SESSION['logged'])){

@@ -6,10 +6,16 @@
 //ако сесийанта променлива съществува и не е празна 
 //пренасочваме потребителя към ИНДЕКСА
 //
+echo 'controlers//login//display.php';//die;
+
 if(!empty($_SESSION['logged'])){
     //header('Location: index.php');
    // exit();
    redirect();
+}
+if(!empty($_SESSION['user']))
+{
+$user=$_SESSION['user'];
 }
 $viewFile=VIEWS_DIR . '/login.php';
 

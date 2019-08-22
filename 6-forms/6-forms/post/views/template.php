@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
-  <head>
+ 
+    <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
@@ -61,8 +62,7 @@
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?php 
-        if(!empty($_SESSION))//добавено после
-        {echo$_SESSION['user']['first_name'].' '.$_SESSION['user']['last_name'];}?></a>
+        if(empty($_SESSION['user'])){}else{echo$_SESSION['user']['first_name'].' '.$_SESSION['user']['last_name'];}?></a>
         <div class="dropdown-menu" aria-labelledby="dropdown01">
             <a class="dropdown-item" href="index.php?page=logout">LOGOUT</a>
          
@@ -80,7 +80,8 @@
 
 <?php 
 
-require_once $viewFile;//ot controlers/home/display.php
+require_once $viewFile;//това е път който показва някаква форма било за лог или регистрация или друго 
+//тоест добавяме отдолу още някаква форма
 
 ?>
 

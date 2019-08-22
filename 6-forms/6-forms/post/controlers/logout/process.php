@@ -1,8 +1,14 @@
 <?php
 
 //controlers/logout/process.php
-    session_destroy();
-    echo 'SESSION IS DESROYЕD';
-header('Location: ');
-exit();
+echo 'LOGOUT';
+//if(!$_SESSION['logged']){
+//    echo 'YOU SUCCESSFULY LOGOUT';//
+//    session_destroy();
+//    echo 'SESSION IS DESROYЕD';
+////header('Location: ');
+////exit();
+ redirect();
+//
+//}
 

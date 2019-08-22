@@ -1,5 +1,6 @@
 <?php
 session_start();
+
 include_once'function.php';
 
 
@@ -43,7 +44,7 @@ include_once'function.php';
 // 
 //
 
-//дефинираме пътища до съответните папки-директории 
+//дефинираме ПЪТИЩА до съответните папки-директории 
 define('VIEWS_DIR',__DIR__.'/views');
 define('CONTROLERS_DIR',__DIR__.'/controlers');
 define('DATA_DIR',__DIR__.'/data');
@@ -51,22 +52,34 @@ define('DATA_DIR',__DIR__.'/data');
  define('DISPLAY_FILE','/display.php');
 define('PROCESS_FILE','/process.php');
 define('URL_PARAM','page');//url 
+
 define('HOME_PAGE','home');
+//echo CONTROLERS_DIR.'/'.HOME_PAGE;die;
 //използваме урл_парам защото паже-то може да го сменим след време 
 if(!empty($_GET[URL_PARAM])){//тук започва кода ако има заявка тръгва 
     $page=$_GET[URL_PARAM];
+    //////////////////////////////
+  print_r($_GET);echo '<br/>';//
+    //////////////////////////////
 }else
 {
     $page=HOME_PAGE;
+    
 }
   
 $dir=CONTROLERS_DIR.'/'.$page;//води ни в контролерс папки с логика
+////////////////
+//echo $dir;die;//
+////////////////
 if($_SERVER['REQUEST_METHOD']=='GET'){
     //ako е гет взема файла и показва съдържание
-    $file=DISPLAY_FILE;
+   $file=DISPLAY_FILE;
+   $_SESSION['path'][]='GET';
+   //echo'<GETbr/>';
 }else if($_SERVER['REQUEST_METHOD']=='POST'){
   //ако е пост извежда фаил за обработка на данни 
     $file=PROCESS_FILE;
+    $_SESSION['path'][]='POST';
     
 }else{
     //...
@@ -75,7 +88,9 @@ if($_SERVER['REQUEST_METHOD']=='GET'){
     
 }
 $filePath=$dir.'/'.$file;
+//echo 'filePath is---->'.$filePath;
 
+//echo'<br/>';
 if(!file_exists($filePath)){
     //ако файла не съществува пращаме грешка 
      
@@ -83,9 +98,9 @@ if(!file_exists($filePath)){
     
     exit();
 }
-
-require_once $filePath;
-
+//и така пътя доо папката която ни е нужна е готов и...
+require_once $filePath;//викаме  съответната папка 
+//print_r($_SESSION['path']);
 
 
 
