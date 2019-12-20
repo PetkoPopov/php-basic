@@ -9,7 +9,7 @@ define('DB_PASS','');
 define('DB_NAME','world');
 $dsn='mysql:host='.DB_HOST.';dbname='.DB_NAME;//data source name
 
-
+ 
 // създаване на обект с БД връзката се осъществява веднага 
 $db=new PDO($dsn,DB_USER,DB_PASS);//php data object
 //var_dump($db);
@@ -206,7 +206,7 @@ $rezult->execute();
             
             
         </tr>
-            <?php endwhile; ?>
+             <?php endwhile; ?>
     </table>
 
 </main><!-- /.container -->

@@ -12,6 +12,7 @@ session_start();?>
 }else{
     $_SESSION['count']++;
 }
+//////////////////////
 $count=$_SESSION['count'];
 $_SESSION['m'][$count]=microtime();
 $random=rand(1,7);

@@ -44,6 +44,7 @@ interface AdapterInterface {
      * @param array $values
      */
     public function insert(string $table,array $values);
+    
     /**
      * 
      * @param string $table

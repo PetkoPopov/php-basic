@@ -1,11 +1,5 @@
 <?php
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 namespace Models;
 
 use Database\AdapterInterface;
@@ -42,17 +36,18 @@ abstract class Model {
      *
      * @var type стойносту=ите на пропертита в БД
      */
-    protected $values = [];
+    //protected $values = [];
+    public $values= [];
 
     public function __construct() {
         $this->dbAdapter = AdapterFactory::create('mysql');//създава нов обект от класс ПДО с БД МСЯЛ
     }
 
-    public static function find($code) {
+    public static function find($code) {///идва от ИНДЕКС.пхп
         $object = new static();
         $object->loaded=true;
         $condition = [$object->primaryKey => $code];
-        $rows = $object->dbAdapter->fetch($object->table, $condition);
+        $rows = $object->dbAdapter->fetch($object->table, $condition);//dbAdapter вече е направена от конструктора 
         if (!count($rows)) {
             throw new \RuntimeException('no rows');
         }
@@ -92,7 +87,7 @@ abstract class Model {
             unset($data[$pk]);
          $this->dbAdapter->update($this->table,$data,$condition);            
         }else{
-            $dbAdapter->insert($this->table,$data);
+            $dbAdapter->insert($this->table,$data);//ДАТА идва от values this->table idwa ot INDEX.PHP
         }
         
         
