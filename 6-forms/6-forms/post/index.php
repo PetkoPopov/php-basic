@@ -54,6 +54,7 @@ define('PROCESS_FILE','/process.php');
 define('URL_PARAM','page');//url 
 
 define('HOME_PAGE','home');
+//var_dump(DATA_DIR);die;
 //echo CONTROLERS_DIR.'/'.HOME_PAGE;die;
 //използваме урл_парам защото паже-то може да го сменим след време 
 if(!empty($_GET[URL_PARAM])){//тук започва кода ако има заявка тръгва 
